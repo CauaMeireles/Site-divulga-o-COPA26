@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= evento.nome %> - Site Oficial do Evento</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- Orbs decorativos -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
+
+    <!-- NAVBAR FIXA -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">🏆</span>
+                <span class="logo-text">Copa 2026</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#estadios">Estádios</a></li>
+                <li><a href="#info">Informações</a></li>
+                <li><a href="<%= evento.urlSelecoes %>" target="_blank" class="nav-cta">Seleções →</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="pulse-dot"></span>
+                <span><%= evento.edicao %> da Copa do Mundo FIFA</span>
+            </div>
+            
+            <h1 class="hero-title">
+                <span class="title-line">Copa do Mundo</span>
+                <span class="title-line title-year">2026</span>
+            </h1>
+            
+            <p class="hero-subtitle">
+                O maior evento de futebol da história. Pela primeira vez, três países sediam juntos: 
+                <strong>Canadá</strong>, <strong>México</strong> e <strong>Estados Unidos</strong>.
+            </p>
+
+            <div class="hero-info">
+                <div class="info-item">
+                    <span class="info-icon">📅</span>
+                    <div>
+                        <div class="info-label">Data</div>
+                        <div class="info-value"><%= evento.dataInicio %></div>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <span class="info-icon">🌎</span>
+                    <div>
+                        <div class="info-label">Sedes</div>
+                        <div class="info-value"><%= evento.paisesSedes.join(' • ') %></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-cta">
+                <a href="<%= evento.urlSelecoes %>" target="_blank" class="btn btn-primary">
+                    <span>⚽</span>
+                    Ver Seleções Participantes
+                    <span class="arrow">→</span>
+                </a>
+                <a href="#sobre" class="btn btn-ghost">
+                    Saiba Mais
+                </a>
+            </div>
+
+            <div class="hero-flags">
+                <div class="flag-item">
+                    <span class="flag">🇨🇦</span>
+                    <span class="flag-name">Canadá</span>
+                </div>
+                <div class="flag-item">
+                    <span class="flag">🇲🇽</span>
+                    <span class="flag-name">México</span>
+                </div>
+                <div class="flag-item">
+                    <span class="flag">🇺🇸</span>
+                    <span class="flag-name">EUA</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESTATÍSTICAS -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number"><%= evento.selecoes %></div>
+                    <div class="stat-label">Seleções</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number"><%= evento.jogos %></div>
+                    <div class="stat-label">Jogos</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number"><%= evento.estadios %></div>
+                    <div class="stat-label">Estádios</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number"><%= evento.cidades %></div>
+                    <div class="stat-label">Cidades</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Sobre o Evento</span>
+                <h2 class="section-title">A maior Copa da história</h2>
+                <p class="section-subtitle">
+                    De 11 de junho a 19 de julho de 2026, o mundo se reúne em três países para celebrar o futebol
+                </p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card glass-card">
+                    <div class="about-icon">🎉</div>
+                    <h3>Primeira Tripla-Sede</h3>
+                    <p>Pela primeira vez, três países sediam juntos a Copa do Mundo, criando um evento sem precedentes.</p>
+                </div>
+                <div class="about-card glass-card">
+                    <div class="about-icon">📈</div>
+                    <h3>Formato Expandido</h3>
+                    <p>De 32 para 48 seleções participantes, com 104 jogos no total — o maior número da história.</p>
+                </div>
+                <div class="about-card glass-card">
+                    <div class="about-icon">🌟</div>
+                    <h3>Mascotes Oficiais</h3>
+                    <p><%= evento.mascote %> representam Canadá, México e EUA respectivamente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESTÁDIOS -->
+    <section id="estadios" class="stadiums-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Locais</span>
+                <h2 class="section-title">Estádios da Copa 2026</h2>
+                <p class="section-subtitle">
+                    16 estádios espalhados pelos três países sede recebem os jogos da maior Copa de todos os tempos
+                </p>
+            </div>
+
+            <div class="stadiums-grid">
+                <% estadios.forEach(estadio => { %>
+                    <div class="stadium-card glass-card">
+                        <div class="stadium-image-wrapper">
+                            <img src="<%= estadio.imagem %>" 
+                                 alt="<%= estadio.nome %>" 
+                                 class="stadium-image"
+                                 onerror="this.outerHTML='<div class=\'stadium-placeholder\'>🏟️</div>'">
+                            <div class="stadium-badge"><%= estadio.destaque %></div>
+                        </div>
+                        <div class="stadium-content">
+                            <h3 class="stadium-name"><%= estadio.nome %></h3>
+                            <div class="stadium-location">
+                                <span class="location-icon">📍</span>
+                                <span><%= estadio.cidade %></span>
+                            </div>
+                            <div class="stadium-country"><%= estadio.pais %></div>
+                            <div class="stadium-stats">
+                                <div class="stadium-stat">
+                                    <span class="stat-icon">👥</span>
+                                    <span class="stat-text"><%= estadio.capacidade %> lugares</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+        </div>
+    </section>
+
+    <!-- INFORMAÇÕES -->
+    <section id="info" class="info-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Para o torcedor</span>
+                <h2 class="section-title">Informações Essenciais</h2>
+                <p class="section-subtitle">
+                    Tudo que você precisa saber para curtir a Copa do Mundo 2026
+                </p>
+            </div>
+
+            <div class="info-grid">
+                <% informacoes.forEach(info => { %>
+                    <div class="info-card glass-card">
+                        <div class="info-card-icon"><%= info.icone %></div>
+                        <h3><%= info.titulo %></h3>
+                        <p><%= info.descricao %></p>
+                    </div>
+                <% }); %>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-card glass-card-strong">
+                <div class="cta-content">
+                    <span class="cta-emoji">⚽</span>
+                    <h2>Conheça as Seleções</h2>
+                    <p>Veja todas as <%= evento.selecoes %> seleções que disputarão a Copa do Mundo 2026 com detalhes sobre continente e títulos mundiais.</p>
+                    <a href="<%= evento.urlSelecoes %>" target="_blank" class="btn btn-primary btn-lg">
+                        <span>🌎</span>
+                        Acessar Página de Seleções
+                        <span class="arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">🏆</span>
+                    <span class="footer-name">FIFA World Cup 2026™</span>
+                </div>
+                <div class="footer-info">
+                    <p>United 2026 • Canadá • México • Estados Unidos</p>
+                    <p class="footer-signature">
+                        Desenvolvido por 
+                        <a href="https://github.com/CauaMeireles" target="_blank">CauaMeireles</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Navbar com fundo ao rolar
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Animação ao aparecer na tela
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.glass-card, .stat-card, .stadium-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

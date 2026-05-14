@@ -1,0 +1,19 @@
+{
+  "name": "copa2026-evento",
+  "version": "1.0.0",
+  "description": "Site do evento da Copa do Mundo 2026 - Canadá, México e Estados Unidos",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node app.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "ejs": "^3.1.10"
+  },
+  "author": "CauaMeireles",
+  "license": "MIT"
+}
